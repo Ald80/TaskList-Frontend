@@ -1,0 +1,40 @@
+<!-- <div class="overlay" >
+    <mat-card class="modalDialog">
+        <mat-toolbar>
+            {{ title }}
+        </mat-toolbar>
+        <mat-card-content>
+            <br>{{ template }}<br><br>
+            <mat-form-field class="full-width">
+                <input matInput type="text"
+                       [placeholder]="placeholder"
+                       [(ngModel)]="value"
+                       (keyup.enter)="emitValue(value)"
+                       (keyup.escape)="emitValue(null)"/>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions class="center">
+            <button mat-button (click)="emitValue(null)" color="primary">{{ cancelText }}</button>
+            <button mat-raised-button (click)="emitValue(value)" color="primary">{{ okText }}</button>
+        </mat-card-actions>
+    </mat-card>
+</div> -->
+<h1 mat-mat-dialog-title>Cadastro de Tarefa</h1>
+<div>
+    <!-- <div>
+        <p>Titulo da tarefa</p>
+        <mat-form-field>
+            <input matInput >
+        </mat-form-field>
+    </div> -->
+    <div mat-dialog-content>
+        <p>Descrição da tarefa</p>
+        <mat-form-field>
+            <input matInput [(ngModel)]="title">
+        </mat-form-field>
+    </div>
+</div>
+<div smat-dialog-actions>
+    <button mat-button (click)="onNoClick()" >Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="title" color="primary" (click)="addTask(title)">OK</button>
+</div>
